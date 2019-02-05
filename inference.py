@@ -9,9 +9,6 @@ import os
 from matplotlib import pyplot as plt
 import tensorflow as tf
 
-
-
-
 def path_to_tensor(img_path):
     # loads RGB image as PIL.Image.Image type
     img = image.load_img(img_path, target_size=(224, 224))
@@ -26,7 +23,6 @@ def infer_open_vino(net):
     plugin= IEPlugin(device="CPU")
     defect_input_blob = next(iter(net.inputs))
     defect_exec_net = plugin.load(network=net)
-
 
     #Loading the image into memory , preoroceesing and inferencing 
     img_orig = 'path to image'
